@@ -47,6 +47,7 @@
                     <th class="hidden-sm">权限规则</th>
                     <th class="hidden-sm">权限名称</th>
                     <th class="hidden-sm">权限概述</th>
+                    <th class="hidden-sm">排序</th>
                     <th class="hidden-md">权限创建日期</th>
                     <th class="hidden-md">权限修改日期</th>
                     <th data-sortable="false">操作</th>
@@ -120,7 +121,7 @@
                             "sSortDescending": ": 以降序排列此列"
                         }
                     },
-                    order: [[5, "asc"]],
+                    order: [[4, "asc"]],
                     serverSide: true,
 
                     ajax: {
@@ -138,6 +139,7 @@
                         {"data": "name"},
                         {"data": "label"},
                         {"data": "description"},
+                        {"data": "sort"},
                         {"data": "created_at"},
                         {"data": "updated_at"},
                         {"data": "action"}

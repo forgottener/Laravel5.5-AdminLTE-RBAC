@@ -35,6 +35,12 @@
 @stop
 @endif
 <div class="form-group">
+    <label for="tag" class="col-md-3 control-label">排序(越小越靠前)</label>
+    <div class="col-md-6">
+        <input type="text" class="form-control" name="sort" id="tag" value="{{ $sort }}" autofocus>
+    </div>
+</div>
+<div class="form-group">
     <label for="tag" class="col-md-3 control-label">权限概述</label>
     <div class="col-md-6">
         <textarea name="description" class="form-control" rows="3">{{ $description }}</textarea>

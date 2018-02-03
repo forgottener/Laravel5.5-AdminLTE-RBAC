@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>用户登录 | BigPang</title>
+    <title>用户登录 | 管理系统</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
@@ -29,7 +29,7 @@
 @include('admin.partials.success')
 <div class="login-box">
     <div class="login-logo">
-        <a><b>Big</b>Pang</a>
+        <a><b>Fei</b>Zhu</a>
     </div>
     <!-- /.login-logo -->
     <div class="login-box-body">
