@@ -32,7 +32,8 @@ class UserController extends Controller
             $order = $request->get('order');
             $columns = $request->get('columns');
             $search = $request->get('search');
-            $data['recordsTotal'] = User::count();
+            $recordsTotal = User::count();
+            $data['recordsTotal'] = $recordsTotal;
             if (strlen($search['value']) > 0) {
                 $data['recordsFiltered'] = User::where(function ($query) use ($search) {
                     $query->where('name', 'LIKE', '%' . $search['value'] . '%')
@@ -46,7 +47,7 @@ class UserController extends Controller
                     ->orderBy($columns[$order[0]['column']]['data'], $order[0]['dir'])
                     ->get();
             } else {
-                $data['recordsFiltered'] = User::count();
+                $data['recordsFiltered'] = $recordsTotal;
                 $data['data'] = User::
                 skip($start)->take($length)
                     ->orderBy($columns[$order[0]['column']]['data'], $order[0]['dir'])

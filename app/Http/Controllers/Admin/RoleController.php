@@ -37,7 +37,8 @@ class RoleController extends Controller
             $order = $request->get('order');
             $columns = $request->get('columns');
             $search = $request->get('search');
-            $data['recordsTotal'] = Role::count();
+            $recordsTotal = Role::count();
+            $data['recordsTotal'] = $recordsTotal;
             if (strlen($search['value']) > 0) {
                 $data['recordsFiltered'] = Role::where(function ($query) use ($search) {
                     $query->where('name', 'LIKE', '%' . $search['value'] . '%')
@@ -51,7 +52,7 @@ class RoleController extends Controller
                     ->orderBy($columns[$order[0]['column']]['data'], $order[0]['dir'])
                     ->get();
             } else {
-                $data['recordsFiltered'] = Role::count();
+                $data['recordsFiltered'] = $recordsTotal;
                 $data['data'] = Role::
                 skip($start)->take($length)
                     ->orderBy($columns[$order[0]['column']]['data'], $order[0]['dir'])
