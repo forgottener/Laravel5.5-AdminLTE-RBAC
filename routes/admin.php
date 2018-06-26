@@ -45,9 +45,13 @@ Route::group(['middleware' => ['auth:admin', 'menu', 'authAdmin']], function () 
     Route::post('user/index', ['as' => 'admin.user.index', 'uses' => 'UserController@index']);
     Route::resource('user', 'UserController', ['names' => ['update' => 'admin.role.edit', 'store' => 'admin.role.create']]);
 
+    //提现管理路由
+    Route::match(['get', 'post'], 'withdraw/index', ['as' => 'admin.withdraw.index', 'uses' => 'WithdrawController@index']);
+    Route::resource('withdraw', 'WithdrawController', ['names' => ['update' => 'admin.withdraw.edit', 'store' => 'admin.withdraw.create']]);
+
 });
 
-Route::get('/', function () {
+/*Route::get('/', function () {
     return redirect('/admin/index');
-});
+});*/
 
